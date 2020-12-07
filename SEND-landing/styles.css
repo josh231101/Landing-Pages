@@ -12,7 +12,7 @@ ul {
   background: #fdcc04;
   display: flex;
   align-items: center;
-  height: 10vh;
+  height: 80px;
   padding: 0rem calc((100vw - 1300px) / 2);
 }
 .navbar__items {
@@ -34,8 +34,9 @@ ul {
 }
 nav a {
   color: #000;
+  font-size: 1rem;
   text-decoration: none;
-  padding: 0 1.5rem;
+  padding: 0 1.8rem;
 }
 a:hover {
   color: #fff;
