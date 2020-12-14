@@ -4,46 +4,50 @@
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
-
 ul {
   list-style: none;
 }
 li {
   list-style: none;
 }
+a {
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* NAVBAR*/
 .navbar {
-  background: none;
+  z-index: 999;
+  position: sticky;
   display: flex;
   align-items: center;
+  height: 80px;
   max-width: 1200px;
   margin: 0 auto;
-  position: sticky;
-  height: 80px;
   margin-bottom: -80px;
-  z-index: 999;
+  padding: 0 24px;
+  background: none;
 }
 .navbar__wrapper {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
 }
 .navbar__logo {
   flex: 1;
 }
 .navbar__link {
-  margin-left: 8px;
-}
-a {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-.logo {
-  width: 10%;
+  margin-left: 12px;
 }
 
+.logo {
+  width: 100px;
+  cursor: pointer;
+}
+/*HERO SECTION*/
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -57,37 +61,67 @@ a {
 }
 .hero__right {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 180px;
+  padding-right: calc((100vw - 1200px) / 2);
   background: rgb(20, 29, 42);
   background: linear-gradient(
     266deg,
     rgba(20, 29, 42, 1) 0%,
     rgba(28, 47, 75, 1) 100%
   );
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-left: 180px;
-  padding-right: calc((100vw - 1200px) / 2);
   text-align: end;
+}
+
+.hero__description {
+  color: white;
+  font-family: "Lora", serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.hero__title {
+  margin: 24px 0;
+  font-size: 56px;
+  color: white;
+}
+.hero__subtitle {
+  color: #ffc931;
+  line-height: 1.5;
 }
 .beer {
   position: absolute;
   left: -140px;
   width: 280px;
 }
-.hero__description {
-  font-family: "Lora", serif;
-  color: white;
-  font-weight: 200;
-  font-size: 14px;
-  line-height: 1.5;
+/*ANIMATION*/
+.animate-pop-in {
+  animation: pop-in 3s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
 }
-.hero__title {
-  font-size: 48px;
-  color: white;
-  margin: 24px 0;
+
+.hero__info {
+  padding-right: 24px;
+  animation: pop-in 2s ease-out;
 }
-.hero__subtitle {
-  color: #ffc931;
-  line-height: 1.5;
+/* RESPONSIVENESS*/
+@media screen and (max-width: 1200px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero__right {
+    padding-right: 24px;
+  }
+}
+/*ANIMATIONS*/
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translate(-4rem) scale(1.3);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
