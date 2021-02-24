@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Lato',sans-serif;
 }
 .banner{
     width: 100%;
@@ -92,6 +92,9 @@ span{
 }
 button:hover span{
     width: 100%;
+}
+button:focus{
+    outline: 0;
 }
 button:hover{
     border:none;
